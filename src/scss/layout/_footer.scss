@@ -1,0 +1,73 @@
+.footer {
+    padding: 4rem 0;
+    background-color: $color-black;
+    color: $color-white;
+
+
+    .container {
+        @include flex($dir: column, $align: center, $wrap: wrap);
+        @include mq(med) {
+            flex-direction: row;
+            justify-content: space-between;
+
+        }
+    }
+
+    &__logo {
+        color: inherit;
+        font-size: 1.9rem;
+        @include flex($just:center, $align: center);
+    }
+
+    &__nav {
+        @include flex($wrap: wrap, $just: center); 
+        @include mq(med) {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+    }
+
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 1rem;
+
+            @include mq(med) {
+                margin-right: 1.5rem;
+            }
+        }
+    }
+
+    &__link {
+        color: inherit;
+        padding: 2rem 1rem;
+        transition: .3s;
+        &:hover {
+            color: $color-grey-dark-2;
+        }
+
+        &--selected {
+            color: $color-grey-dark-2;
+        }
+
+    }
+
+    &__copy {
+        padding-top: 2rem;
+        border-top: 1px solid $color-grey-light-2;
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+
+.social-links {
+    @include flex;
+
+    &__item {
+        &:not(:last-of-type) {
+            margin-right: 1rem;
+        }
+    }
+
+}

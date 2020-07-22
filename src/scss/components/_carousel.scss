@@ -1,0 +1,54 @@
+.carousel {
+    padding: 4rem 0;
+    overflow: hidden;
+    position: relative;
+
+    &__slider {
+        transition:  transform .3s;
+        @include flex();
+        width: 400%;
+
+        @include mq(med) {
+          width: 133%;
+        }
+        
+    }
+
+    &__item {
+        width: 100%;
+        overflow: hidden;
+
+        @include mq(med) {
+            width: 30%;
+            margin: 1rem 1rem;
+            // margin-right: 1rem;
+            // margin-left: 1rem;
+        }
+    }
+
+    &__indicators-list {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        @include flex($just: center);
+    }
+
+    &__indicator {
+        height: 4px;
+        width: 2rem;
+        border: 1px solid $color-black;
+        margin: $gutter;
+        transition: background .3s;
+
+        &--selected {
+            background-color: $color-primary;
+        }
+
+        &--hidden {
+            @include mq(med) {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.heading-primary {
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 4rem;
+
+
+    @include mq(med) {
+        letter-spacing: 0;
+
+    }
+    @include mq(lg) {
+        letter-spacing: 1px;
+        font-weight: 300;
+        font-size: 3.6rem;
+
+
+    }
+
+
+}
+
+
+.heading-secondary {
+    text-align: center;
+    font-size: 3.2rem;
+    letter-spacing: 1px;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.25;
+    margin-bottom: 3rem;
+}
+
+
+.heading-tertiary, h3 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: $color-primary-dark;
+}
+
+

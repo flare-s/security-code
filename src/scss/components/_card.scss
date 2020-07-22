@@ -1,0 +1,97 @@
+.card {
+    border-radius: 5px;
+    min-height: 40rem;
+
+    &-sub {
+        box-shadow: 0 0 20px 2px rgba($color-black, 0.5);
+        height: 40rem;
+        min-width: 26rem;
+        width: 75%;
+        background-color: $color-white;
+        padding: 2rem 2rem;
+        color: $color-white;
+
+        @include mq(sm) {
+            width: 50%;
+        }
+        @include mq(med) {
+            width: 30%;
+        }
+
+        &:not(:last-of-type) {
+            margin-bottom: 2rem;
+            @include mq(med) {
+                margin-bottom: 0;
+            }
+        }
+
+        &--1 {
+            background-image: $linear-secondary;
+            
+        }
+
+        &--2 {
+            
+            background-image: $linear-primary;
+            @include mq(med) {
+                margin: 1.5rem -1.5rem 0;
+                position: relative;
+                z-index: 1;
+            }
+        }
+
+        &--3 {
+            background-image: $linear-tertiary;
+
+            
+        }
+    
+        &__title, &__price, &__info {
+            margin-bottom: 2rem;
+        }
+    
+        &__title {
+            font-size: 2.2rem;
+            text-transform: uppercase;
+        }
+    
+        &__price {
+            font-size: 1.9rem;
+        }
+    
+        &__list {
+            margin-bottom: 2rem;
+        }
+    
+        &__item {
+            &:not(:last-of-type) {
+                margin-bottom: 1rem;
+            }
+        }
+
+
+    }
+
+    &-post {
+        &__body {
+            padding: 1rem 1.5rem;
+        }
+
+        &__img {
+            height: 30rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        &__author, &__date {
+            margin-bottom: $gutter;
+            text-transform: capitalize;
+        }
+    }
+
+    
+
+}

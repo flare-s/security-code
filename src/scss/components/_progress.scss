@@ -1,0 +1,34 @@
+.progress {
+    display: flex;
+    &:first-child {
+        margin-top: 2rem;
+    }
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    } 
+    &__title {
+        text-transform: uppercase;
+        margin-right: 2rem;
+    }
+
+    &__bar {
+        flex: 1;
+        background-color: $color-grey-dark-2;
+        border-radius: 5px;
+    }
+
+    &__meter {
+        height: 100%;
+        background-color: $color-primary;
+        border-radius: 5px;
+        position: relative;
+        width: 0%;
+      
+    }
+
+    &__percentage {
+        position: absolute;
+        top: -100%;
+        right: 0;
+    }
+}

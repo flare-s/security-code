@@ -1,0 +1,12 @@
+.icon {
+    transition: all .3s;
+    &--feature {
+        width: 4rem;
+        height: 4rem;
+        fill: $color-black;
+        transition: fill .3s;
+    }
+    @include social-icons($social-icons);
+
+
+}

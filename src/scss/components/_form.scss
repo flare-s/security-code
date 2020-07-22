@@ -1,0 +1,28 @@
+.form {
+    padding: 0 2rem;
+
+    &__group {
+        margin-bottom: 2rem;
+    }
+    &__label {
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 5px;
+        padding: 1rem 1.5rem;
+        border: 1px solid $color-grey-light-2;
+        transition: box-shadow .3s, border .3s;
+
+        &:focus {
+            outline: none;
+            border: 1px solid $color-primary;
+            box-shadow: 0 0 10px 5px rgba($color-grey-dark-3, .1);
+        }
+    }
+}

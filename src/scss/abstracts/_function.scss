@@ -1,0 +1,11 @@
+// rem to percentage
+@function rem-to-perc($target, $context: $max-width) {
+    @return ($target / $context) * 100%;
+}
+
+// calculates with for flex items depending on how many items and the margin
+@function width-margin($items, $margin: $gutter) {
+    $gutter-perc: rem-to-perc($margin) * 2;
+    $gutter-items: $gutter-perc * $items;
+    @return (100% - $gutter-items) / $items; 
+}

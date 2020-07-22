@@ -1,0 +1,28 @@
+.post {
+    padding-bottom: 3rem;
+    &:not(:last-child) {
+        margin-bottom: 4rem;
+        border-bottom: 1px solid $color-grey-dark-2;
+    }
+    &__header {
+        margin-bottom: $gutter;
+    }
+    &__heading {
+        text-align: left;
+        letter-spacing: 0;
+    }
+
+    &__author, &__category {
+        margin-right: $gutter;
+    }
+
+    &__img {
+        height: 45rem;
+        border-radius: 5px;
+        margin-bottom: 2rem;
+
+        img {
+            height: 100%;
+        }
+    }
+}

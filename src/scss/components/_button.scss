@@ -1,0 +1,34 @@
+.btn {
+
+
+    &--dark {
+        @extend %btn;
+        background-color: $color-primary-dark;
+        color: $color-white;
+        border-radius: 5px;
+        border: 1px solid transparent;
+
+
+
+        &:hover {
+            background-color: transparent;
+            color: $color-primary-dark;
+            border: 1px solid $color-primary-dark;
+        }
+    }
+
+    &--light {
+        @extend %btn;
+        background-color: $color-white;
+        color: $color-primary;
+        border-radius: 5px;
+        border: 1px solid transparent;
+
+        &:hover {
+            background-color: transparent;
+            color: $color-white;
+            border: 1px solid $color-white;
+        }
+    }
+}
+

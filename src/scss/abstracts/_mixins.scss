@@ -1,0 +1,46 @@
+
+
+// queries mixin
+@mixin  mq($bp) {
+    $sm: map-get($break-points, xsm);
+    $value: map-get($break-points, $bp);
+
+    @if ($value > $sm) {
+        @media only screen and (min-width: $value) {
+            @content;
+        }
+    } @else {
+        @media only screen and (max-width: $sm) {
+            @content;
+        }
+    }
+}
+
+@mixin  flex($dir: null, $wrap: null, $just: null, $align: null) {
+    display: flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $just;
+    align-items: $align;
+}
+
+
+@mixin social-icons($map) {
+    @each $icon, $color in $map {
+        &-#{$icon}:hover {
+            fill: $color;
+        }
+    }
+}
+
+
+@mixin responsive($query, $brp) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2)      and ($query: $brp),
+        only screen and (   min--moz-device-pixel-ratio: 2)      and ($query: $brp),
+        only screen and (     -o-min-device-pixel-ratio: 2/1)    and ($query: $brp),
+        only screen and (        min-device-pixel-ratio: 2)      and ($query: $brp),
+        only screen and (                min-resolution: 192dpi) and ($query: $brp),
+        only screen and (                min-resolution: 2dppx)  and ($query: $brp) {
+            @content;
+    }
+}

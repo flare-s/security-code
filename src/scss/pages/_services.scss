@@ -1,0 +1,44 @@
+.services {
+    .box {
+        @include flex($dir: column);
+        @include mq(med) {
+            flex-direction: row;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+    .feature-box {
+        min-height: 45rem;
+    }
+}
+
+
+.features-info {
+    .container {
+        
+        @include flex($dir: column);
+
+        @include mq(med) {
+            flex-direction: row;
+        }
+    }
+
+
+    .box-1 {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        @include mq(med) {
+            width: 50%;
+            margin-bottom: 0;
+        }
+        
+    }
+
+    .box-2 {
+        margin: auto 0;
+        padding: 1rem;
+        @include mq(med) {
+            width: 50%;
+        }
+    }
+}

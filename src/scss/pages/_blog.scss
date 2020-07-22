@@ -1,0 +1,38 @@
+.blog main > .container {
+    @include flex($dir: column);
+
+    @include mq(lg) {
+        flex-direction: row;
+    }
+}
+
+.articles {
+    width: 100%;
+    @include mq(lg) {
+        width: 70%;
+    }
+}
+aside {
+    width: 100%;
+    @include mq(lg) {
+        width: 30%;
+    }
+}
+
+.side-post {
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+    &__heading, &__date {
+        color: $color-black;
+        font-size: 1.4rem;
+    }
+    &__heading {
+        text-transform: uppercase;
+        margin-bottom: .5rem;
+    }
+
+    &__date {
+        text-transform: capitalize;
+    }
+}

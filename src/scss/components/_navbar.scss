@@ -1,0 +1,50 @@
+.navbar {
+    min-height: 6rem;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: transparent;
+    box-shadow: 0 0 1.5rem rgba($color-black, 0.8);
+    background-color: $color-primary;
+    @include flex($align: center);
+
+    @include mq(lg) {
+        height: 6rem;
+    }
+
+    .container {
+        @include flex;
+        @include mq(med) {
+            align-items: center;
+            flex-direction: column;
+        }
+        @include mq(lg) {
+            flex-direction: row;
+        }
+    }
+
+}
+
+
+.logo-container {
+    width: 15rem;
+    min-width: 15rem;
+
+    @include mq(med) {
+        margin: 1rem 0;
+    }
+
+    @include mq(lg) {
+        margin: 0;
+    }
+}
+
+.logo {
+    @include flex($just: center, $align: center);
+    font-size: 1.9rem;
+    height: 100%;
+    width: 100%;
+    color: $color-white;
+}

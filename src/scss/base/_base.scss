@@ -1,0 +1,81 @@
+/* everything related to basic set up */
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* we didnt move the font size to typography bc its mostly relate to setting up the page responsively */
+html {
+     font-size: 62.5%; // so it would be 10px[16px (browser default font size) /10 = 62.5, so we can use rem unit to make responsive contenet
+     overflow-x: hidden;
+     height: 100%;
+} 
+
+body{ 
+    background-color: $color-white;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    height: 100%;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    color: $color-grey-dark;
+    padding-top: 6rem;
+
+    @include mq(lg) {
+        font-size: 1.8rem;
+    }
+
+
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+section {
+    padding: 6rem 0;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+p {
+    &:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+::selection { // this to add style to highlighted text when we click with the mouse
+    background-color: $color-primary;
+    color: $color-white;
+}
+
+::-webkit-scrollbar {
+    background-color: $color-black;
+
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $color-primary;
+    background-image: $linear-mix;
+    border-radius: 1rem;
+}
+
+
+

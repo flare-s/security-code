@@ -1,0 +1,67 @@
+.about-page {
+
+
+    .carousel {
+        &__slider {
+            @include flex();
+            width: 300%;
+    
+            @include mq(med) {
+              width: 300%;
+            }
+            
+        }
+    
+        &__item {
+            width: 30%;
+            margin-right: 1.5%;
+            margin-left: 1.5%;
+    
+            @include mq(med) {
+                width: 30%;
+                margin: 1rem 0;
+                margin-right: 1.5%;
+                margin-left: 1.5%;
+            }
+        }
+    
+    }
+}
+
+
+
+.team {
+    text-align: center;
+    .box {
+        @include flex($dir: column);
+
+        @include mq(med) {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+}
+
+.testimonials {
+    .container {
+        @include flex($dir: column);
+        @include mq(med) {
+            flex-direction: row;
+        }
+
+    }
+
+    &-box-1 {
+        width: 100%;
+        @include mq(med) {
+            width: 50%;
+        }
+    }
+
+    &-box-2 {
+        width: 100%;
+        @include mq(med) {
+            width: 50%;
+        }
+    }
+}

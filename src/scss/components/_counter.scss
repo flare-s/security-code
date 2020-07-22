@@ -1,0 +1,30 @@
+.counter {
+    @include flex($align: center, $dir: column);
+    @include mq(med) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__box {
+
+        width: 90%;
+        margin: 2rem 5%;
+        @include mq(med) {
+            width: auto;
+            flex: 1 width-margin(4);
+            margin: 0 $gutter;
+        }
+        
+        
+    }
+
+    &__number {
+        font-size: 4.5rem;
+    }
+
+    &__title {
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}

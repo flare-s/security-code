@@ -1,0 +1,32 @@
+.testimonial {
+    &__quote {
+        padding: 4rem 1rem;
+        background-color: $color-grey-light-1;
+        border-radius: 5px;
+        position: relative;
+        margin-bottom: $gutter;
+
+        &:before {
+            content: "\201C";
+            position: absolute;
+            top: 0;
+            left: 0;
+            font-size: 7rem;
+            line-height: 1;
+        }
+
+        &:after {
+            content: "\201D";
+            position: absolute;
+            bottom: -23%;
+            right: 0;
+            font-size: 7rem;
+            line-height: 1;
+        }
+    }
+
+    &__name  {
+        text-transform: capitalize;
+
+    }
+}

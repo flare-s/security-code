@@ -1,0 +1,68 @@
+// colors
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: rgb(34, 32, 32);
+$color-purple: #7930CF;
+
+
+$color-navy: #3086CF;
+
+
+$color-blue: #2241DD;
+
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+$color-grey-light-3: #cecece;
+
+$color-primary: $color-blue;
+$color-primary-light: lighten($color-primary, 15%);
+$color-primary-dark: darken($color-primary, 15%);
+$color-secondary: $color-navy;
+$color-secondary-light: lighten($color-secondary, 15%);
+$color-secondary-dark: darken($color-secondary, 15%);
+$color-tertiary: $color-purple;
+$color-tertiary-light: lighten($color-tertiary, 15%);
+$color-tertiary-dark: darken($color-tertiary, 15%);
+
+
+// sizes
+$max-width: 120rem;
+$gutter: 1rem;
+
+//break points
+$break-points: (
+    'xsm': 575px,
+    'sm': 576px,
+    'med': 768px,
+    'lg': 992px,
+    'xlg': 1200px,
+);
+
+// background gradients
+$linear-mix: linear-gradient(110deg, rgba($color-primary, 1), rgba($color-secondary, 1), rgba($color-tertiary, 1));
+$linear-primary: linear-gradient(110deg, rgba($color-primary, 1), rgba($color-primary-light, 1), rgba($color-primary-dark, 1));
+$linear-secondary: linear-gradient(110deg, rgba($color-secondary, 1), rgba($color-secondary-light, 1), rgba($color-secondary-dark, 1));
+$linear-tertiary: linear-gradient(110deg, rgba($color-tertiary, 1), rgba($color-tertiary-light, 1), rgba($color-tertiary-dark, 1));
+
+
+$social-icons: (
+    "twitter": #1da1f2,
+    "youtube": #ff0000,
+    "instagram": #c32aa3
+
+);
+
+
+
+
+
+
+
+
+
+
