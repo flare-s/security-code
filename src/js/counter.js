@@ -2,7 +2,7 @@ import "intersection-observer";
 
 
 
-const counters = Array.from(document.querySelectorAll("[data-counter]"));
+// const counters = Array.from(document.querySelectorAll("[data-counter]"));
 
 const counterOptions = {
     threshold: 0.21,
@@ -10,7 +10,7 @@ const counterOptions = {
 }
 
 // setting an observer on counter elements
-const countersObserver = new IntersectionObserver((entries) => {
+export const countersObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.intersectionRatio > 0.2) {
 
@@ -37,5 +37,5 @@ const countersObserver = new IntersectionObserver((entries) => {
 }, counterOptions);
 
 // start observing the selected elements
-counters.forEach(counter => countersObserver.observe(counter));
+// counters.forEach(counter => countersObserver.observe(counter));
 

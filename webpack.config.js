@@ -1,9 +1,7 @@
 const path = require("path");
-const webpack = require('webpack');
+const TerserPlugin = require("terser-webpack-plugin");
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
-
 
 module.exports = {
     entry: {
@@ -15,8 +13,14 @@ module.exports = {
     },  
     output: {
         filename: 'loaders/[name].bundle.js',
-        path: path.join(__dirname, '/dist'),
+        path: path.join(__dirname, 'dist'),
         publicPath: "",
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new TerserPlugin(),
+        ],
     },
     module: {
         rules: [
@@ -30,7 +34,8 @@ module.exports = {
                             [
                                 '@babel/preset-env',
                                 {
-                                    "useBuiltIns": "entry",
+                                    "useBuiltIns": "usage",
+                                    "corejs": 3
                                 }
                             ]
                         ],
@@ -39,32 +44,38 @@ module.exports = {
                 }
             },
             {
-                test: /\.(png|svg|jpg|gif|mp4)$/,
-                loader:'file-loader',
-                options: {
-                    name: 'img/[name].[ext]',
+                test: /\.(?:ico|gif|png|jpg|jpeg|svg)$/i,
+                type: 'asset',
+                generator: {
+                    filename: './img/[hash][ext][query]'
                 }
-                
+            },
+            {
+                test: /\.(woff(2)?|eot|ttf|otf)$/,
+                type: 'asset',
+                generator: {
+                    filename: 'fonts/[hash][ext][query]'
+                }
             },
             {
                 test: /\.html$/,
                 use: [
                     {
                         loader: "html-loader",
-                        options: { 
-                            minimize: true,
-                        }
                     }
                 ]
             },
+            // {
+            //     test: /\.(png|svg|jpg|gif)$/,
+            //     use: [
+            //     'file-loader',
+            //     ],
+            // },
             {
                 test: /\.(sass|scss|css)$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: "../"
-                        }
                     },
                     {
                         loader: "css-loader"
@@ -88,44 +99,45 @@ module.exports = {
     },
     plugins: [
         new HtmlWebPackPlugin({
-            template: "./src/index.html",
             filename: "./index.html",
             chunks: ['index'],
-            
-            
-            
+            template: path.resolve(__dirname, "src", "index.html"),
         }),
         new HtmlWebPackPlugin({
-            template: "./src/about.html",
-            filename: "./about.html",
+            filename: "./pages/about.html",
             chunks: ['about'],
+            template: path.resolve(__dirname, "src/pages", "about.html"),
+            publicPath: '../'
             
 
             
             
         }),
         new HtmlWebPackPlugin({
-            template: "./src/services.html",
-            filename: "./services.html",
+            filename: "./pages/services.html",
             chunks: ['services'],
+            template: "./src/pages/services.html",
+            publicPath: '../'
             
 
             
             
         }),
         new HtmlWebPackPlugin({
-            template: "./src/blog.html",
-            filename: "./blog.html",
+            filename: "./pages/blog.html",
             chunks: ['blog'],
+            template: "./src/pages/blog.html",
+            publicPath: '../'
             
 
             
             
         }),
         new HtmlWebPackPlugin({
-            template: "./src/contact.html",
-            filename: "./contact.html",
+            filename: "./pages/contact.html",
             chunks: ['contact'],
+            template: "./src/pages/contact.html",
+            publicPath: '../'
             
 
             
@@ -135,13 +147,14 @@ module.exports = {
             filename: "css/[name].css",
             chunkFilename: "[id].css",
         }),
+
        
 
     ],
     devServer: {
-        port: 3000,
-        disableHostCheck: true,
-    }
+        static: path.join(__dirname, 'dist'),
+        port: 9000,
+    },
 };
 
 

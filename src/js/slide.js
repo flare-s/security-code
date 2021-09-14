@@ -1,12 +1,13 @@
 // function that determnes the functionality of the carousel
-const slide = () => {
-    const slides = Array.from(document.querySelectorAll("[data-slide]"));
-    const slider = document.querySelector("[data-slider]");
-    const indicators = Array.from(document.querySelectorAll(".carousel__indicator"));
+export const slide = (slides, slider, indicators) => {
+    // const slides = Array.from(document.querySelectorAll("[data-slide]"));
+    // const slider = document.querySelector("[data-slider]");
+    // const indicators = Array.from(document.querySelectorAll(".carousel__indicator"));
     
 
     let ind = 0;
     let slide = slides.length - 1;
+    console.log(mq.matches);
      
     // we use the compute var to get the margin value of each slide item to add it to the width
     const compute = window.getComputedStyle(slides[ind]);
@@ -29,5 +30,5 @@ const slide = () => {
         })
     })
 }
-slide();
+
 

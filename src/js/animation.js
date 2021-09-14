@@ -1,12 +1,12 @@
 import "intersection-observer";
-const animeElements = Array.from(document.querySelectorAll("[data-anime]"));
+// const animeElements = Array.from(document.querySelectorAll("[data-anime]"));
 const animeOptions = {
     threshold: 0.2
 }
 
 
 // adding animation on scroll to the selected elements
-const animeObserver = new IntersectionObserver((entries, animeObserver) => {
+export const animeObserver = new IntersectionObserver((entries, animeObserver) => {
     entries.forEach(entry => {
         if (entry.intersectionRatio > 0.2) {
             const animation = entry.target.getAttribute("data-anime");
@@ -17,4 +17,4 @@ const animeObserver = new IntersectionObserver((entries, animeObserver) => {
     });
 }, animeOptions);
 
-animeElements.forEach(el => animeObserver.observe(el));
+// animeElements.forEach(el => animeObserver.observe(el));
