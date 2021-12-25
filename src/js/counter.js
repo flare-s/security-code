@@ -2,7 +2,6 @@ import "intersection-observer";
 
 
 
-// const counters = Array.from(document.querySelectorAll("[data-counter]"));
 
 const counterOptions = {
     threshold: 0.21,
@@ -36,6 +35,5 @@ export const countersObserver = new IntersectionObserver((entries) => {
 
 }, counterOptions);
 
-// start observing the selected elements
-// counters.forEach(counter => countersObserver.observe(counter));
+
 

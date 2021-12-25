@@ -1,5 +1,4 @@
 import "intersection-observer";
-// const animeElements = Array.from(document.querySelectorAll("[data-anime]"));
 const animeOptions = {
     threshold: 0.2
 }
@@ -17,4 +16,3 @@ export const animeObserver = new IntersectionObserver((entries, animeObserver) =
     });
 }, animeOptions);
 
-// animeElements.forEach(el => animeObserver.observe(el));

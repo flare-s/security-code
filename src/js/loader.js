@@ -1,5 +1,4 @@
-// const loaderWrapper = document.querySelector(".loader-wrapper");
-// const wrapper = document.querySelector(".wrapper");
+
 
 // loader on the load and after the page loaded removing it from the page
 export  const load = (wrapper, content) => {

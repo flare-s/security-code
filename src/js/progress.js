@@ -1,6 +1,5 @@
 import "intersection-observer";
 
-// const progressBars = Array.from(document.querySelectorAll("[data-progress]"));
 //progress bar intersection observer options
 const progressBarsOptions = {
     threshold: [0.1 ,0.2]
@@ -39,5 +38,4 @@ export const progressObserver = new IntersectionObserver((entries, progressObser
     })
 }, progressBarsOptions);
 
-// run the intersection observer on the elements selected
-// progressBars.forEach(progress => progressObserver.observe(progress));
+
